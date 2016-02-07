@@ -1,0 +1,63 @@
+<div class="comment">
+	<div class='wdg_game_comments box'>
+		<div class="wall-image">
+			<h2 class="box-title">{{comments.length}} {{pinglun}}</h2>
+		</div>
+		<div class="box-content">
+
+			<div class="gc-loader is-hidden">
+				<span>Loading...</span>
+			</div>
+
+			<form method="get" action="" id="game-comments-form"
+				class="game-comments-post form clearfix" ng-hide="showCurrentUser">
+
+				<div class="login-to-post-comments block orange">
+					<p>You need to log in to add a comment.</p>
+					<a id="comments-join-button-nav" class="comments-join-btn btn"
+						ng-click="switchModal()">Join Now</a><br> <span>or</span> <a
+						id="comments-login-button-nav" class="text-link"
+						ng-click="switchModal('signIn')">Login</a>
+				</div>
+
+
+			</form>
+
+
+			<div class="game-comments-post form clearfix"
+				ng-hide="!showCurrentUser">
+				<h4>
+					<span>Add a comment</span>
+				</h4>
+
+				<form id="profile-wall-form" class="pw-form">
+					<div class="pw-message" contenteditable="true" ng-model="comment"></div>
+					<button class="btn" type="submit" ng-click="postComments()">Post</button>
+				</form>
+			</div>
+			<div class="clear">
+				<ul dir-paginate="comment in comments | itemsPerPage: 5"
+					class="media-feed comments-list">
+					<li class="media game-comment-sample">
+						<div class="media-body">
+							<p class="game-comments-title">{{comment.username}}</p>
+
+							<p class="game-comments-content">{{comment.comment}}</p>
+
+							<p class="game-comments-time">
+								<span>Posted</span> <span class="game-comments-time-units">
+									{{comment.date}} ago</span>
+							</p>
+						</div>
+					</li>
+
+				</ul>
+				<div class="text-center">
+					<dir-pagination-controls boundary-links="true"></dir-pagination-controls>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</div>

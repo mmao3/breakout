@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html data-ng-app="app" id="app" ng-controller="mainCtrl">
+<head>
+<meta charset="UTF-8">
+<title>Confirmation</title>
+
+<script>
+ 
+ setTimeout(function(){
+	 window.location.href="http://breakout.maomao.work/index.html";
+ }, 5000);
+ function startTimer(){
+	 document.getElementById("timer").innerHTML=document.getElementById("timer").innerHTML-1;
+	 if(document.getElementById("timer").innerHTML==1){
+		 document.getElementById("s").innerHTML="second";
+		 
+	 }
+ }
+ window.setInterval(startTimer,1000);
+ 
+ 
+ </script>
+
+</head>
+<body style="font-size: 18px">
+	<p>A confirmation email has been sent to you. You have to verify it
+		before logging in.</p>
+	<p>
+		The page will be redirected to home page in <span id="timer">5</span>
+		<span id="s">seconds</span>. Click <a href="index.html">Here</a> to
+		force redirect.
+</body>
+</html>

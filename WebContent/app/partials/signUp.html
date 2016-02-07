@@ -1,0 +1,54 @@
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="popup popup-box popup-user-status ">
+
+				<h2 class="popup-box-title">Just sign up...</h2>
+				<a class="popup-close sprite-green" data-dismiss="modal"
+					aria-hidden="true">&times;</a>
+
+				<div class="popup-box-content form">
+					<form ng-submit="register()">
+						<div class="toggleItem email-auth item-active">
+							<div class="hinted-container">
+								<input ng-model="user.username" type="text" maxlength="20"
+									ng-class="usernameInput" id="popup-register-username"
+									placeholder="Username" tabindex="1" ng-blur="verifyUsername()">
+
+								<div ng-class="usernameclass" title="username" id="hint-sign-0"></div>
+							</div>
+
+							<div class="hinted-container">
+								<input type="email" ng-model="user.email"
+									ng-class="usernameEmail" id="popup-register-email"
+									placeholder="Your email" tabindex="2" ng-blur="verifyEmail()">
+
+								<div ng-class="emailclass" title="email" id="hint-sign-1"></div>
+							</div>
+
+							<div class="hinted-container">
+								<input type="password" maxlength="20"
+									ng-class="usernamePassword" id="popup-register-password"
+									placeholder="Password" ng-model="user.password" tabindex="3"
+									ng-blur="verifyPassword()">
+
+								<div ng-class="passwordclass" title="password" id="hint-sign-2"></div>
+							</div>
+						</div>
+					</form>
+					<div class="align-center coppa-element">
+						<a href="#" class="btn big orange" id="popup-register-button"
+							ng-disabled="isSubmited" ng-click="register()">Play Now!
+							&nbsp;
+							<div class="round-icon sprite-orange"></div>
+						</a> <span class="tip-sign-submit loading" ng-hide="!isSubmited"></span>
+					</div>
+				</div>
+				<div class="popup-footer">
+					Already have an account? <a ng-click="switchModal('signIn')"
+						href="#">Log in here</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

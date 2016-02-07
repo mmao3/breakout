@@ -1,0 +1,46 @@
+<div id="signInModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="signIn popup popup-box popup-user-status">
+				<h2 class="popup-box-title">SIGN IN</h2>
+				<a class="popup-close sprite-orange" data-dismiss="modal"
+					aria-hidden="true">&times;</a>
+				<div class="popup-box-content form">
+
+
+					<form id="signIn" ng-submit="logIn()">
+						<div class="inline-error visible" id="popup-login-error-generic"
+							ng-hide="isMatched">Sorry, we were unable to sign you in.
+							Try again!</div>
+
+						<input ng-model="logInuser.username" type="text" name="username"
+							class="form" placeholder="Email or Username"> <input
+							ng-model="logInuser.password" type="password" name="password"
+							class="form" placeholder="Password">
+						<p class="form-small-text">
+							<a href="#" ng-click="switchModal('rest')">Forgot your
+								password?</a>
+						</p>
+						<input id="popup-login-remember" ng-model="checkboxModel.value"
+							type="checkbox" name="remember" class="form"
+							placeholder="Remember me"> <span>Keep me logged in
+							on this computer.</span>
+					</form>
+					<div class="align-center">
+						<button class="btn big" ng-disabled="isLoggin" ng-click="logIn()">
+							Sign in
+							<div class="round-icon sprite-blue"></div>
+						</button>
+						<span class="tip-signin-submit loading" ng-hide="!isLoggin"></span>
+					</div>
+
+
+				</div>
+				<div id="popup-login-register" class="popup-footer">
+					Not a member yet? <a href="#" ng-click="switchModal('signUp')">Join
+						now</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

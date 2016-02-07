@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html data-ng-app="app" id="app" ng-controller="mainCtrl">
+<head lang="en">
+<meta charset="UTF-8">
+<title>Break out</title>
+<link rel="stylesheet" type="text/css"
+	href="styles/bootstrap-theme.min.css" />
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="styles/font-awesome.min.css" />
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="styles/star-rating.css" />
+<link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+<script src="scripts/angular.js"></script>
+<script src="scripts/angular-route.js"></script>
+<script src="scripts/jquery-1.11.3.js"></script>
+<script src="scripts/jquery-ui.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/star-rating.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controller/mainCtrl.js"></script>
+<script src="app/service/getTime.js"></script>
+<script src="app/service/util.js"></script>
+<script src="app/controller/myConvas.js"></script>
+<script src="scripts/dirPagination.js"></script>
+
+
+
+
+</head>
+<body ngCloak>
+	<modal></modal>
+	<sign-in-modal></sign-in-modal>
+	<reset-password-modal></reset-password-modal>
+	<header>
+		<div class="container meta-container">
+			<div class="float_left">
+				<img src="images/drago.png">
+			</div>
+			<div class="float_right" class="ng-cloak">
+				<article class="user-status">
+					<div class="guest-user-status" ng-hide="showCurrentUser">
+						<a id="join-button-nav" class="btn large red" data-toggle="modal"
+							data-target="#myModal">Join</a> <span>or</span> <a
+							id="login-button-nav" class="btn large" data-toggle="modal"
+							data-target="#signInModal">Login</a>
+					</div>
+
+					<div class="logged-user-status" ng-hide="!showCurrentUser">
+						<div class="user-status-options">
+							<span class="status-welcome">Welcome </span> <span
+								class="status-username">{{currentUser.username}}</span> <a
+								id="logout-button-nav" class="user-status-logout"
+								ng-click="logout()" href="#">Log Out</a>
+						</div>
+					</div>
+				</article>
+
+			</div>
+		</div>
+
+	</header>
+	<div class="container meta-container relative">
+		<div class="game-tab1">
+
+			<div class="icon--info"></div>
+			<div class="info">
+
+				<h2 class="box-title1">Break It</h2>
+				<div class="box-content1">
+					<h3>Description</h3>
+					<p>Break the bricks and collect all the points!</p>
+
+
+					<h3>How to play Break It</h3>
+					<p>Move the mouse to game area and left click to start.</p>
+
+
+					<h3>Category</h3>
+					<p>Skill</p>
+				</div>
+
+
+			</div>
+		</div>
+
+
+		<div class="rateGame">
+			<input id="input-2c" class="rating" min="0" max="5" step="0.5"
+				data-size="xs" data-symbol="&#xf005;" data-glyphicon="false"
+				data-rating-class="rating-fa">
+		</div>
+	</div>
+
+
+	<div class="container meta-container mainContent relative">
+
+		<canvas id="myCanvas" width="400" height="500"></canvas>
+		<canvas class="canvas" id="canvas2" width="400" height="100"></canvas>
+
+	</div>
+
+	<div class="container meta-container comment">
+
+		<comment></comment>
+
+	</div>
+	<footer class="marginTop">
+		<div class="container meta-container ">
+			<div class="float_left align">
+				<span class="font_9">&copy;2015 by MAO MAO</span>
+			</div>
+			<div class="float_right align">
+				<a href="https://www.facebook.com/jed.mao.9" target="_blank"><img
+					class="pointer" src="images/facebook_26.00_png_srz"></a>&nbsp; <a
+					href="https://twitter.com/dongfangMao" target="_blank"><img
+					class="pointer" src="images/twitter_26.00_png_srz"></a>&nbsp; <a
+					href="https://plus.google.com/108823316356153881711/posts"
+					target="_blank"><img class="pointer"
+					src="images/google_26.00_png_srz"></a>&nbsp; <a
+					href="https://www.linkedin.com/pub/mao-mao/104/65/b29"
+					target="_blank"><img class="pointer"
+					src="images/linkedIn_26.00_png_srz"></a>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>
